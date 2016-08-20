@@ -143,7 +143,7 @@ public class Contact extends Element {
 		this.jobTitle = jobTitle;
 	}
 
-	public List<? extends Email> getEmails() {
+	public List<Email> getEmails() {
 		if(emails == null) return Collections.emptyList();
 		return Collections.unmodifiableList(emails);
 	}
@@ -154,7 +154,7 @@ public class Contact extends Element {
 		emails.add(email);
 	}
 
-	public List<? extends PhoneNumber> getPhoneNumbers() {
+	public List<PhoneNumber> getPhoneNumbers() {
 		if(phoneNumbers == null) return Collections.emptyList();
 		return Collections.unmodifiableList(phoneNumbers);
 	}
@@ -165,7 +165,7 @@ public class Contact extends Element {
 		phoneNumbers.add(phoneNumber);
 	}
 
-	public List<? extends Im> getIms() {
+	public List<Im> getIms() {
 		if(ims == null) return Collections.emptyList();
 		return Collections.unmodifiableList(ims);
 	}
@@ -176,7 +176,7 @@ public class Contact extends Element {
 		ims.add(im);
 	}
 
-	public List<? extends String> getWebPages() {
+	public List<String> getWebPages() {
 		if(webPages == null) return Collections.emptyList();
 		return Collections.unmodifiableList(webPages);
 	}
@@ -187,7 +187,7 @@ public class Contact extends Element {
 		webPages.add(webPage);
 	}
 
-	public List<? extends Address> getAddresses() {
+	public List<Address> getAddresses() {
 		if(addresses == null) return Collections.emptyList();
 		return Collections.unmodifiableList(addresses);
 	}
