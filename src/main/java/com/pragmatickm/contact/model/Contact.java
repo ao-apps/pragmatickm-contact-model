@@ -266,9 +266,4 @@ public class Contact extends Element {
 	protected String getDefaultIdPrefix() {
 		return "contact";
 	}
-
-	@Override
-	public String getLinkCssClass() {
-		return "contactLink";
-	}
 }
