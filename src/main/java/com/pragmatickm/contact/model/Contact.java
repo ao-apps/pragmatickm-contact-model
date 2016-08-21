@@ -258,11 +258,6 @@ public class Contact extends Element {
 	}
 
 	@Override
-	public String getListItemCssClass() {
-		return "list-item-contact";
-	}
-
-	@Override
 	protected String getDefaultIdPrefix() {
 		return "contact";
 	}
