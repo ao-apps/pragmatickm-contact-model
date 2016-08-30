@@ -52,7 +52,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>aoserv-client</artifactId>
-			<version>1.79</version>
+			<version>1.79.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>
