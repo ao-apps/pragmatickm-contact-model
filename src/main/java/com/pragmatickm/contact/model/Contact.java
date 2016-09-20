@@ -23,6 +23,7 @@
 package com.pragmatickm.contact.model;
 
 import com.aoindustries.aoserv.client.validator.Email;
+import com.aoindustries.util.AoCollections;
 import com.semanticcms.core.model.Element;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,157 +50,252 @@ public class Contact extends Element {
 
 	@Override
 	public Contact freeze() {
-		super.freeze();
-		return this;
+		synchronized(lock) {
+			if(emails != null) emails = AoCollections.optimalUnmodifiableList(emails);
+			if(phoneNumbers != null) phoneNumbers = AoCollections.optimalUnmodifiableList(phoneNumbers);
+			if(ims != null) ims = AoCollections.optimalUnmodifiableList(ims);
+			if(webPages != null) webPages = AoCollections.optimalUnmodifiableList(webPages);
+			if(addresses != null) addresses = AoCollections.optimalUnmodifiableList(addresses);
+			super.freeze();
+			return this;
+		}
 	}
 
 	public String getTitle() {
-		return title;
+		synchronized(lock) {
+			return title;
+		}
 	}
 
 	public void setTitle(String title) {
-		checkNotFrozen();
-		this.title = title;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.title = title;
+		}
 	}
 
 	public String getFirst() {
-		return first;
+		synchronized(lock) {
+			return first;
+		}
 	}
 
 	public void setFirst(String first) {
-		checkNotFrozen();
-		this.first = first;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.first = first;
+		}
 	}
 
 	public String getMiddle() {
-		return middle;
+		synchronized(lock) {
+			return middle;
+		}
 	}
 
 	public void setMiddle(String middle) {
-		checkNotFrozen();
-		this.middle = middle;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.middle = middle;
+		}
 	}
 
 	public String getNick() {
-		return nick;
+		synchronized(lock) {
+			return nick;
+		}
 	}
 
 	public void setNick(String nick) {
-		checkNotFrozen();
-		this.nick = nick;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.nick = nick;
+		}
 	}
 
 	public String getLast() {
-		return last;
+		synchronized(lock) {
+			return last;
+		}
 	}
 
 	public void setLast(String last) {
-		checkNotFrozen();
-		this.last = last;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.last = last;
+		}
 	}
 
 	public String getMaiden() {
-		return maiden;
+		synchronized(lock) {
+			return maiden;
+		}
 	}
 
 	public void setMaiden(String maiden) {
-		checkNotFrozen();
-		this.maiden = maiden;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.maiden = maiden;
+		}
 	}
 
 	public String getSuffix() {
-		return suffix;
+		synchronized(lock) {
+			return suffix;
+		}
 	}
 
 	public void setSuffix(String suffix) {
-		checkNotFrozen();
-		this.suffix = suffix;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.suffix = suffix;
+		}
 	}
 
 	public String getCompany() {
-		return company;
+		synchronized(lock) {
+			return company;
+		}
 	}
 
 	public void setCompany(String company) {
-		checkNotFrozen();
-		this.company = company;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.company = company;
+		}
 	}
 
 	public String getDepartment() {
-		return department;
+		synchronized(lock) {
+			return department;
+		}
 	}
 
 	public void setDepartment(String department) {
-		checkNotFrozen();
-		this.department = department;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.department = department;
+		}
 	}
 
 	public String getJobTitle() {
-		return jobTitle;
+		synchronized(lock) {
+			return jobTitle;
+		}
 	}
 
 	public void setJobTitle(String jobTitle) {
-		checkNotFrozen();
-		this.jobTitle = jobTitle;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.jobTitle = jobTitle;
+		}
 	}
 
 	public List<Email> getEmails() {
-		if(emails == null) return Collections.emptyList();
-		return Collections.unmodifiableList(emails);
+		synchronized(lock) {
+			if(emails == null) return Collections.emptyList();
+			if(frozen) return emails;
+			return AoCollections.unmodifiableCopyList(emails);
+		}
 	}
 
 	public void addEmail(Email email) {
-		checkNotFrozen();
-		if(emails == null) emails = new ArrayList<Email>();
-		emails.add(email);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(emails == null) emails = new ArrayList<Email>();
+			emails.add(email);
+		}
 	}
 
 	public List<PhoneNumber> getPhoneNumbers() {
-		if(phoneNumbers == null) return Collections.emptyList();
-		return Collections.unmodifiableList(phoneNumbers);
+		synchronized(lock) {
+			if(phoneNumbers == null) return Collections.emptyList();
+			if(frozen) return phoneNumbers;
+			return AoCollections.unmodifiableCopyList(phoneNumbers);
+		}
 	}
 
 	public void addPhoneNumber(PhoneNumber phoneNumber) {
-		checkNotFrozen();
-		if(phoneNumbers == null) phoneNumbers = new ArrayList<PhoneNumber>();
-		phoneNumbers.add(phoneNumber);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(phoneNumbers == null) phoneNumbers = new ArrayList<PhoneNumber>();
+			phoneNumbers.add(phoneNumber);
+		}
 	}
 
 	public List<Im> getIms() {
-		if(ims == null) return Collections.emptyList();
-		return Collections.unmodifiableList(ims);
+		synchronized(lock) {
+			if(ims == null) return Collections.emptyList();
+			if(frozen) return ims;
+			return AoCollections.unmodifiableCopyList(ims);
+		}
 	}
 
 	public void addIm(Im im) {
-		checkNotFrozen();
-		if(ims == null) ims = new ArrayList<Im>();
-		ims.add(im);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(ims == null) ims = new ArrayList<Im>();
+			ims.add(im);
+		}
 	}
 
 	public List<String> getWebPages() {
-		if(webPages == null) return Collections.emptyList();
-		return Collections.unmodifiableList(webPages);
+		synchronized(lock) {
+			if(webPages == null) return Collections.emptyList();
+			if(frozen) return webPages;
+			return AoCollections.unmodifiableCopyList(webPages);
+		}
 	}
 
 	public void addWebPage(String webPage) {
-		checkNotFrozen();
-		if(webPages == null) webPages = new ArrayList<String>();
-		webPages.add(webPage);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(webPages == null) webPages = new ArrayList<String>();
+			webPages.add(webPage);
+		}
 	}
 
 	public List<Address> getAddresses() {
-		if(addresses == null) return Collections.emptyList();
-		return Collections.unmodifiableList(addresses);
+		synchronized(lock) {
+			if(addresses == null) return Collections.emptyList();
+			if(frozen) return addresses;
+			return AoCollections.unmodifiableCopyList(addresses);
+		}
 	}
 
 	public void addAddress(Address address) {
-		checkNotFrozen();
-		if(addresses == null) addresses = new ArrayList<Address>();
-		addresses.add(address);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(addresses == null) addresses = new ArrayList<Address>();
+			addresses.add(address);
+		}
 	}
 
 	@Override
 	public void appendLabel(Appendable out) throws IOException {
+		// Get copies because writes to out can block, don't hold lock while blocking on I/O
+		String title;
+		String first;
+		String middle;
+		String nick;
+		String last;
+		String maiden;
+		String suffix;
+		String jobTitle;
+		String company;
+		String department;
+		synchronized(lock) {
+			title = this.title;
+			first = this.first;
+			middle = this.middle;
+			nick = this.nick;
+			last = this.last;
+			maiden = this.maiden;
+			suffix = this.suffix;
+			jobTitle = this.jobTitle;
+			company = this.company;
+			department = this.department;
+		}
 		boolean didOne = false;
 		if(title != null) {
 			if(didOne) out.append(' ');
