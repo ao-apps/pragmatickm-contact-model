@@ -24,6 +24,7 @@ package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
 import com.aoindustries.lang.ObjectUtils;
+import static com.aoindustries.util.StringUtility.nullIfEmpty;
 
 public class Im {
 
@@ -34,7 +35,7 @@ public class Im {
 	public Im(ImType type, String handle, String comment) {
 		this.type = NullArgumentException.checkNotNull(type, "type");
 		this.handle = NullArgumentException.checkNotNull(handle, "handle");
-		this.comment = comment;
+		this.comment = nullIfEmpty(comment);
 	}
 
 	@Override

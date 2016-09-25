@@ -23,7 +23,9 @@
 package com.pragmatickm.contact.model;
 
 import com.aoindustries.aoserv.client.validator.Email;
+import com.aoindustries.lang.NullArgumentException;
 import com.aoindustries.util.AoCollections;
+import static com.aoindustries.util.StringUtility.nullIfEmpty;
 import com.semanticcms.core.model.Element;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -70,7 +72,7 @@ public class Contact extends Element {
 	public void setTitle(String title) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.title = title;
+			this.title = nullIfEmpty(title);
 		}
 	}
 
@@ -83,7 +85,7 @@ public class Contact extends Element {
 	public void setFirst(String first) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.first = first;
+			this.first = nullIfEmpty(first);
 		}
 	}
 
@@ -96,7 +98,7 @@ public class Contact extends Element {
 	public void setMiddle(String middle) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.middle = middle;
+			this.middle = nullIfEmpty(middle);
 		}
 	}
 
@@ -109,7 +111,7 @@ public class Contact extends Element {
 	public void setNick(String nick) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.nick = nick;
+			this.nick = nullIfEmpty(nick);
 		}
 	}
 
@@ -122,7 +124,7 @@ public class Contact extends Element {
 	public void setLast(String last) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.last = last;
+			this.last = nullIfEmpty(last);
 		}
 	}
 
@@ -135,7 +137,7 @@ public class Contact extends Element {
 	public void setMaiden(String maiden) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.maiden = maiden;
+			this.maiden = nullIfEmpty(maiden);
 		}
 	}
 
@@ -148,7 +150,7 @@ public class Contact extends Element {
 	public void setSuffix(String suffix) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.suffix = suffix;
+			this.suffix = nullIfEmpty(suffix);
 		}
 	}
 
@@ -161,7 +163,7 @@ public class Contact extends Element {
 	public void setCompany(String company) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.company = company;
+			this.company = nullIfEmpty(company);
 		}
 	}
 
@@ -174,7 +176,7 @@ public class Contact extends Element {
 	public void setDepartment(String department) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.department = department;
+			this.department = nullIfEmpty(department);
 		}
 	}
 
@@ -187,7 +189,7 @@ public class Contact extends Element {
 	public void setJobTitle(String jobTitle) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.jobTitle = jobTitle;
+			this.jobTitle = nullIfEmpty(jobTitle);
 		}
 	}
 
@@ -248,6 +250,8 @@ public class Contact extends Element {
 	}
 
 	public void addWebPage(String webPage) {
+		webPage = nullIfEmpty(webPage);
+		NullArgumentException.checkNotNull(webPage, "webPage");
 		synchronized(lock) {
 			checkNotFrozen();
 			if(webPages == null) webPages = new ArrayList<String>();

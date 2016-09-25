@@ -24,6 +24,7 @@ package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
 import com.aoindustries.lang.ObjectUtils;
+import static com.aoindustries.util.StringUtility.nullIfEmpty;
 
 public class PhoneNumber {
 
@@ -34,7 +35,7 @@ public class PhoneNumber {
 	public PhoneNumber(PhoneType type, String number, String comment) {
 		this.type = NullArgumentException.checkNotNull(type, "type");
 		this.number = NullArgumentException.checkNotNull(number, "number");
-		this.comment = comment;
+		this.comment = nullIfEmpty(comment);
 	}
 
 	@Override

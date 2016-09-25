@@ -24,6 +24,7 @@ package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
 import com.aoindustries.lang.ObjectUtils;
+import static com.aoindustries.util.StringUtility.nullIfEmpty;
 
 public class Address {
 
@@ -47,13 +48,13 @@ public class Address {
 		String comment
 	) {
 		this.type = NullArgumentException.checkNotNull(type, "type");
-		this.address1 = address1;
-		this.address2 = address2;
-		this.city = city;
-		this.stateProv = stateProv;
-		this.zipPostal = zipPostal;
-		this.country = country;
-		this.comment = comment;
+		this.address1 = nullIfEmpty(address1);
+		this.address2 = nullIfEmpty(address2);
+		this.city = nullIfEmpty(city);
+		this.stateProv = nullIfEmpty(stateProv);
+		this.zipPostal = nullIfEmpty(zipPostal);
+		this.country = nullIfEmpty(country);
+		this.comment = nullIfEmpty(comment);
 	}
 
 	@Override
