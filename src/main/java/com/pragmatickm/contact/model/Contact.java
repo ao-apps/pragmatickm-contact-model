@@ -34,16 +34,16 @@ import java.util.List;
 
 public class Contact extends Element {
 
-	private String title;
-	private String first;
-	private String middle;
-	private String nick;
-	private String last;
-	private String maiden;
-	private String suffix;
-	private String company;
-	private String department;
-	private String jobTitle;
+	private volatile String title;
+	private volatile String first;
+	private volatile String middle;
+	private volatile String nick;
+	private volatile String last;
+	private volatile String maiden;
+	private volatile String suffix;
+	private volatile String company;
+	private volatile String department;
+	private volatile String jobTitle;
 	private List<Email> emails;
 	private List<PhoneNumber> phoneNumbers;
 	private List<Im> ims;
@@ -53,144 +53,106 @@ public class Contact extends Element {
 	@Override
 	public Contact freeze() {
 		synchronized(lock) {
-			if(emails != null) emails = AoCollections.optimalUnmodifiableList(emails);
-			if(phoneNumbers != null) phoneNumbers = AoCollections.optimalUnmodifiableList(phoneNumbers);
-			if(ims != null) ims = AoCollections.optimalUnmodifiableList(ims);
-			if(webPages != null) webPages = AoCollections.optimalUnmodifiableList(webPages);
-			if(addresses != null) addresses = AoCollections.optimalUnmodifiableList(addresses);
-			super.freeze();
-			return this;
+			if(!frozen) {
+				if(emails != null) emails = AoCollections.optimalUnmodifiableList(emails);
+				if(phoneNumbers != null) phoneNumbers = AoCollections.optimalUnmodifiableList(phoneNumbers);
+				if(ims != null) ims = AoCollections.optimalUnmodifiableList(ims);
+				if(webPages != null) webPages = AoCollections.optimalUnmodifiableList(webPages);
+				if(addresses != null) addresses = AoCollections.optimalUnmodifiableList(addresses);
+				super.freeze();
+			}
 		}
+		return this;
 	}
 
 	public String getTitle() {
-		synchronized(lock) {
-			return title;
-		}
+		return title;
 	}
 
 	public void setTitle(String title) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.title = nullIfEmpty(title);
-		}
+		checkNotFrozen();
+		this.title = nullIfEmpty(title);
 	}
 
 	public String getFirst() {
-		synchronized(lock) {
-			return first;
-		}
+		return first;
 	}
 
 	public void setFirst(String first) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.first = nullIfEmpty(first);
-		}
+		checkNotFrozen();
+		this.first = nullIfEmpty(first);
 	}
 
 	public String getMiddle() {
-		synchronized(lock) {
-			return middle;
-		}
+		return middle;
 	}
 
 	public void setMiddle(String middle) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.middle = nullIfEmpty(middle);
-		}
+		checkNotFrozen();
+		this.middle = nullIfEmpty(middle);
 	}
 
 	public String getNick() {
-		synchronized(lock) {
-			return nick;
-		}
+		return nick;
 	}
 
 	public void setNick(String nick) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.nick = nullIfEmpty(nick);
-		}
+		checkNotFrozen();
+		this.nick = nullIfEmpty(nick);
 	}
 
 	public String getLast() {
-		synchronized(lock) {
-			return last;
-		}
+		return last;
 	}
 
 	public void setLast(String last) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.last = nullIfEmpty(last);
-		}
+		checkNotFrozen();
+		this.last = nullIfEmpty(last);
 	}
 
 	public String getMaiden() {
-		synchronized(lock) {
-			return maiden;
-		}
+		return maiden;
 	}
 
 	public void setMaiden(String maiden) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.maiden = nullIfEmpty(maiden);
-		}
+		checkNotFrozen();
+		this.maiden = nullIfEmpty(maiden);
 	}
 
 	public String getSuffix() {
-		synchronized(lock) {
-			return suffix;
-		}
+		return suffix;
 	}
 
 	public void setSuffix(String suffix) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.suffix = nullIfEmpty(suffix);
-		}
+		checkNotFrozen();
+		this.suffix = nullIfEmpty(suffix);
 	}
 
 	public String getCompany() {
-		synchronized(lock) {
-			return company;
-		}
+		return company;
 	}
 
 	public void setCompany(String company) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.company = nullIfEmpty(company);
-		}
+		checkNotFrozen();
+		this.company = nullIfEmpty(company);
 	}
 
 	public String getDepartment() {
-		synchronized(lock) {
-			return department;
-		}
+		return department;
 	}
 
 	public void setDepartment(String department) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.department = nullIfEmpty(department);
-		}
+		checkNotFrozen();
+		this.department = nullIfEmpty(department);
 	}
 
 	public String getJobTitle() {
-		synchronized(lock) {
-			return jobTitle;
-		}
+		return jobTitle;
 	}
 
 	public void setJobTitle(String jobTitle) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.jobTitle = nullIfEmpty(jobTitle);
-		}
+		checkNotFrozen();
+		this.jobTitle = nullIfEmpty(jobTitle);
 	}
 
 	public List<Email> getEmails() {
@@ -278,44 +240,26 @@ public class Contact extends Element {
 	@Override
 	public void appendLabel(Appendable out) throws IOException {
 		// Get copies because writes to out can block, don't hold lock while blocking on I/O
-		String title;
-		String first;
-		String middle;
-		String nick;
-		String last;
-		String maiden;
-		String suffix;
-		String jobTitle;
-		String company;
-		String department;
-		synchronized(lock) {
-			title = this.title;
-			first = this.first;
-			middle = this.middle;
-			nick = this.nick;
-			last = this.last;
-			maiden = this.maiden;
-			suffix = this.suffix;
-			jobTitle = this.jobTitle;
-			company = this.company;
-			department = this.department;
-		}
 		boolean didOne = false;
+		String title = this.title;
 		if(title != null) {
 			if(didOne) out.append(' ');
 			out.append(title);
 			didOne = true;
 		}
+		String first = this.first;
 		if(first != null) {
 			if(didOne) out.append(' ');
 			out.append(first);
 			didOne = true;
 		}
+		String middle = this.middle;
 		if(middle != null) {
 			if(didOne) out.append(' ');
 			out.append(middle);
 			didOne = true;
 		}
+		String nick = this.nick;
 		if(nick != null) {
 			if(didOne) out.append(' ');
 			out.append('“');
@@ -323,11 +267,13 @@ public class Contact extends Element {
 			out.append('”');
 			didOne = true;
 		}
+		String last = this.last;
 		if(last != null) {
 			if(didOne) out.append(' ');
 			out.append(last);
 			didOne = true;
 		}
+		String maiden = this.maiden;
 		if(maiden != null) {
 			if(didOne) out.append(' ');
 			out.append('(');
@@ -335,25 +281,29 @@ public class Contact extends Element {
 			out.append(')');
 			didOne = true;
 		}
+		String suffix = this.suffix;
 		if(suffix != null) {
 			if(didOne) out.append(", ");
 			out.append(suffix);
 			didOne = true;
 		}
-		if(!didOne && jobTitle != null) {
-			out.append(jobTitle);
-			didOne = true;
-		}
-		if(!didOne && company != null) {
-			out.append(company);
-			didOne = true;
-		}
-		if(!didOne && department != null) {
-			out.append(department);
-			didOne = true;
-		}
 		if(!didOne) {
-			out.append("Contact");
+			String jobTitle = this.jobTitle;
+			if(jobTitle != null) {
+				out.append(jobTitle);
+			} else {
+				String company = this.company;
+				if(company != null) {
+					out.append(company);
+				} else {
+					String department = this.department;
+					if(department != null) {
+						out.append(department);
+					} else {
+						out.append("Contact");
+					}
+				}
+			}
 		}
 	}
 
