@@ -54,7 +54,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 				scmUrl="@{documented.scm.url}"
 			>
 				<ul>
-					<li>New version of <ao:a href="https://semanticcms.com/core/servlet/">SemanticCMS Core Servlet</ao:a></li>
+					<li>New version of <ao:a href="https://semanticcms.com/core/model/">SemanticCMS Core Model</ao:a>.</li>
 				</ul>
 			</changelog:release>
 		</c:if>
