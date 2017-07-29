@@ -52,11 +52,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			>
-				<ul>
-					<li>New version of <ao:a href="https://semanticcms.com/core/model/">SemanticCMS Core Model</ao:a>.</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
 
 		<changelog:release
