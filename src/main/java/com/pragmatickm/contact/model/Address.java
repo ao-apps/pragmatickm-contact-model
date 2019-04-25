@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,8 +23,8 @@
 package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
-import com.aoindustries.lang.ObjectUtils;
 import static com.aoindustries.util.StringUtility.nullIfEmpty;
+import java.util.Objects;
 
 public class Address {
 
@@ -63,19 +63,19 @@ public class Address {
 		Address other = (Address)o;
 		return
 			type == other.type
-			&& ObjectUtils.equals(address1, other.address1)
-			&& ObjectUtils.equals(address2, other.address2)
-			&& ObjectUtils.equals(city, other.city)
-			&& ObjectUtils.equals(stateProv, other.stateProv)
-			&& ObjectUtils.equals(zipPostal, other.zipPostal)
-			&& ObjectUtils.equals(country, other.country)
-			&& ObjectUtils.equals(comment, other.comment)
+			&& Objects.equals(address1, other.address1)
+			&& Objects.equals(address2, other.address2)
+			&& Objects.equals(city, other.city)
+			&& Objects.equals(stateProv, other.stateProv)
+			&& Objects.equals(zipPostal, other.zipPostal)
+			&& Objects.equals(country, other.country)
+			&& Objects.equals(comment, other.comment)
 		;
 	}
 
 	@Override
 	public int hashCode() {
-		return ObjectUtils.hash(
+		return Objects.hash(
 			address1,
 			address2,
 			city,
