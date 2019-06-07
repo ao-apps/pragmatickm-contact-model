@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,8 +23,8 @@
 package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
-import com.aoindustries.lang.ObjectUtils;
 import static com.aoindustries.util.StringUtility.nullIfEmpty;
+import java.util.Objects;
 
 public class PhoneNumber {
 
@@ -45,7 +45,7 @@ public class PhoneNumber {
 		return
 			type == other.type
 			&& number.equals(other.number)
-			&& ObjectUtils.equals(comment, other.comment)
+			&& Objects.equals(comment, other.comment)
 		;
 	}
 
@@ -53,7 +53,7 @@ public class PhoneNumber {
 	public int hashCode() {
 		int hash = type.hashCode();
 		hash = hash * 31 + number.hashCode();
-		hash = hash * 31 + ObjectUtils.hashCode(comment);
+		hash = hash * 31 + Objects.hashCode(comment);
 		return hash;
 	}
 

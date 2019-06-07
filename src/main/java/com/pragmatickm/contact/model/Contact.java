@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -166,7 +166,7 @@ public class Contact extends Element {
 	public void addEmail(Email email) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(emails == null) emails = new ArrayList<Email>();
+			if(emails == null) emails = new ArrayList<>();
 			emails.add(email);
 		}
 	}
@@ -182,7 +182,7 @@ public class Contact extends Element {
 	public void addPhoneNumber(PhoneNumber phoneNumber) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(phoneNumbers == null) phoneNumbers = new ArrayList<PhoneNumber>();
+			if(phoneNumbers == null) phoneNumbers = new ArrayList<>();
 			phoneNumbers.add(phoneNumber);
 		}
 	}
@@ -198,7 +198,7 @@ public class Contact extends Element {
 	public void addIm(Im im) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(ims == null) ims = new ArrayList<Im>();
+			if(ims == null) ims = new ArrayList<>();
 			ims.add(im);
 		}
 	}
@@ -216,7 +216,7 @@ public class Contact extends Element {
 		NullArgumentException.checkNotNull(webPage, "webPage");
 		synchronized(lock) {
 			checkNotFrozen();
-			if(webPages == null) webPages = new ArrayList<String>();
+			if(webPages == null) webPages = new ArrayList<>();
 			webPages.add(webPage);
 		}
 	}
@@ -232,7 +232,7 @@ public class Contact extends Element {
 	public void addAddress(Address address) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(addresses == null) addresses = new ArrayList<Address>();
+			if(addresses == null) addresses = new ArrayList<>();
 			addresses.add(address);
 		}
 	}
@@ -241,64 +241,64 @@ public class Contact extends Element {
 	public void appendLabel(Appendable out) throws IOException {
 		// Get copies because writes to out can block, don't hold lock while blocking on I/O
 		boolean didOne = false;
-		String title = this.title;
-		if(title != null) {
+		String _title = this.title;
+		if(_title != null) {
 			if(didOne) out.append(' ');
-			out.append(title);
+			out.append(_title);
 			didOne = true;
 		}
-		String first = this.first;
-		if(first != null) {
+		String _first = this.first;
+		if(_first != null) {
 			if(didOne) out.append(' ');
-			out.append(first);
+			out.append(_first);
 			didOne = true;
 		}
-		String middle = this.middle;
-		if(middle != null) {
+		String _middle = this.middle;
+		if(_middle != null) {
 			if(didOne) out.append(' ');
-			out.append(middle);
+			out.append(_middle);
 			didOne = true;
 		}
-		String nick = this.nick;
-		if(nick != null) {
+		String _nick = this.nick;
+		if(_nick != null) {
 			if(didOne) out.append(' ');
 			out.append('“');
-			out.append(nick);
+			out.append(_nick);
 			out.append('”');
 			didOne = true;
 		}
-		String last = this.last;
-		if(last != null) {
+		String _last = this.last;
+		if(_last != null) {
 			if(didOne) out.append(' ');
-			out.append(last);
+			out.append(_last);
 			didOne = true;
 		}
-		String maiden = this.maiden;
-		if(maiden != null) {
+		String _maiden = this.maiden;
+		if(_maiden != null) {
 			if(didOne) out.append(' ');
 			out.append('(');
-			out.append(maiden);
+			out.append(_maiden);
 			out.append(')');
 			didOne = true;
 		}
-		String suffix = this.suffix;
-		if(suffix != null) {
+		String _suffix = this.suffix;
+		if(_suffix != null) {
 			if(didOne) out.append(", ");
-			out.append(suffix);
+			out.append(_suffix);
 			didOne = true;
 		}
 		if(!didOne) {
-			String jobTitle = this.jobTitle;
-			if(jobTitle != null) {
-				out.append(jobTitle);
+			String _jobTitle = this.jobTitle;
+			if(_jobTitle != null) {
+				out.append(_jobTitle);
 			} else {
-				String company = this.company;
-				if(company != null) {
-					out.append(company);
+				String _company = this.company;
+				if(_company != null) {
+					out.append(_company);
 				} else {
-					String department = this.department;
-					if(department != null) {
-						out.append(department);
+					String _department = this.department;
+					if(_department != null) {
+						out.append(_department);
 					} else {
 						out.append("Contact");
 					}
