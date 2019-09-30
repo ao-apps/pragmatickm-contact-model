@@ -13,7 +13,7 @@
  * (at your option) any later version.
  *
  * pragmatickm-contact-model is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of 
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
@@ -163,6 +163,7 @@ public class Contact extends Element {
 		}
 	}
 
+	// TODO: Support unicode email addresses: https://tools.ietf.org/html/rfc6531
 	public void addEmail(Email email) {
 		synchronized(lock) {
 			checkNotFrozen();
