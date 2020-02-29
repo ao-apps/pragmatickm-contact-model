@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,9 +23,9 @@
 package com.pragmatickm.contact.model;
 
 public enum ImType {
-	AIM("AIM", "contact_im_aim"),
-	ICQ("ICQ", "contact_im_icq"),
-	SKYPE("Skype", "contact_im_skype");
+	AIM ("AIM",    "pragmatickm-contact-im-aim"),
+	ICQ ("ICQ",    "pragmatickm-contact-im-icq"),
+	SKYPE("Skype", "pragmatickm-contact-im-skype");
 
 	private final String label;
 	private final String cssClass;
@@ -39,6 +39,8 @@ public enum ImType {
 		return label;
 	}
 
+	// TODO: This CSS Class should go in pragmatickm-task-renderer-html
+	// TODO: See StatusResult.java
 	public String getCssClass() {
 		return cssClass;
 	}
