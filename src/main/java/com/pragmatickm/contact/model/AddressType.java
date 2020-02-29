@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,9 +23,9 @@
 package com.pragmatickm.contact.model;
 
 public enum AddressType {
-	POBOX("POBOX", "POBOX", "contact_pobox_address"),
-	HOME("Home Address", "Home", "contact_home_address"),
-	WORK("Work Address", "Work", "contact_work_address");
+	POBOX("POBOX",        "POBOX", "pragmatickm-contact-address-pobox"),
+	HOME ("Home Address", "Home",  "pragmatickm-contact-address-home"),
+	WORK ("Work Address", "Work",  "pragmatickm-contact-address-work");
 
 	private final String label;
 	private final String shortLabel;
@@ -49,6 +49,7 @@ public enum AddressType {
 		return shortLabel;
 	}
 
+	// TODO: This CSS Class should go in pragmatickm-contact-servlet
 	public String getCssClass() {
 		return cssClass;
 	}

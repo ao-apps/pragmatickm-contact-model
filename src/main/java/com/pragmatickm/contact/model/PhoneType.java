@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,12 +23,12 @@
 package com.pragmatickm.contact.model;
 
 public enum PhoneType {
-	WORK("Work", "contact_work_number"),
-	TOLLFREE("Toll Free", "contact_toll_free"),
-	HOME("Home", "contact_home_number"),
-	MOBILE("Mobile", "contact_mobile_phone"),
-	PAGER("Pager", "contact_pager_number"),
-	FAX("Fax", "contact_fax_number");
+	WORK    ("Work",      "pragmatickm-contact-phone-work"),
+	TOLLFREE("Toll Free", "pragmatickm-contact-phone-tollfree"),
+	HOME    ("Home",      "pragmatickm-contact-phone-home"),
+	MOBILE  ("Mobile",    "pragmatickm-contact-phone-mobile"),
+	PAGER   ("Pager",     "pragmatickm-contact-phone-pager"),
+	FAX     ("Fax",       "pragmatickm-contact-phone-fax");
 
 	private final String label;
 	private final String cssClass;
@@ -42,6 +42,8 @@ public enum PhoneType {
 		return label;
 	}
 
+	// TODO: This CSS Class should go in pragmatickm-task-servlet
+	// TODO: See StatusResult.java
 	public String getCssClass() {
 		return cssClass;
 	}
