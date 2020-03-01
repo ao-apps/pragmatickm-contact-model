@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,6 @@ import com.aoindustries.net.Email;
 import com.aoindustries.util.AoCollections;
 import static com.aoindustries.util.StringUtility.nullIfEmpty;
 import com.semanticcms.core.model.Element;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -239,73 +238,73 @@ public class Contact extends Element {
 	}
 
 	@Override
-	public void appendLabel(Appendable out) throws IOException {
+	public String getLabel() {
+		// Keep a single String, in case it is the only value in the final result
+		// This allows in-context translator to identify and mark-up the value
+		String value = null;
+		StringBuilder sb = new StringBuilder();
 		// Get copies because writes to out can block, don't hold lock while blocking on I/O
-		boolean didOne = false;
 		String _title = this.title;
 		if(_title != null) {
-			if(didOne) out.append(' ');
-			out.append(_title);
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append(value = _title);
 		}
 		String _first = this.first;
 		if(_first != null) {
-			if(didOne) out.append(' ');
-			out.append(_first);
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append(value = _first);
 		}
 		String _middle = this.middle;
 		if(_middle != null) {
-			if(didOne) out.append(' ');
-			out.append(_middle);
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append(value = _middle);
 		}
 		String _nick = this.nick;
 		if(_nick != null) {
-			if(didOne) out.append(' ');
-			out.append('“');
-			out.append(_nick);
-			out.append('”');
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append('“');
+			sb.append(value = _nick);
+			sb.append('”');
 		}
 		String _last = this.last;
 		if(_last != null) {
-			if(didOne) out.append(' ');
-			out.append(_last);
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append(value = _last);
 		}
 		String _maiden = this.maiden;
 		if(_maiden != null) {
-			if(didOne) out.append(' ');
-			out.append('(');
-			out.append(_maiden);
-			out.append(')');
-			didOne = true;
+			if(sb.length() > 0) sb.append(' ');
+			sb.append('(');
+			sb.append(value = _maiden);
+			sb.append(')');
 		}
 		String _suffix = this.suffix;
 		if(_suffix != null) {
-			if(didOne) out.append(", ");
-			out.append(_suffix);
-			didOne = true;
+			if(sb.length() > 0) sb.append(", ");
+			sb.append(value = _suffix);
 		}
-		if(!didOne) {
-			String _jobTitle = this.jobTitle;
-			if(_jobTitle != null) {
-				out.append(_jobTitle);
-			} else {
-				String _company = this.company;
-				if(_company != null) {
-					out.append(_company);
-				} else {
-					String _department = this.department;
-					if(_department != null) {
-						out.append(_department);
-					} else {
-						out.append("Contact");
-					}
-				}
+		if(sb.length() > 0) {
+			assert value != null;
+			if(sb.length() == value.length()) {
+				assert value.equals(sb.toString());
+				return value;
 			}
+			assert sb.length() > value.length();
+			return sb.toString();
 		}
+		String _jobTitle = this.jobTitle;
+		if(_jobTitle != null) {
+			return _jobTitle;
+		}
+		String _company = this.company;
+		if(_company != null) {
+			return _company;
+		}
+		String _department = this.department;
+		if(_department != null) {
+			return _department;
+		}
+		return "Contact";
 	}
 
 	@Override
