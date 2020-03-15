@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2015, 2016, 2019  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,7 @@
 package com.pragmatickm.contact.model;
 
 import com.aoindustries.lang.NullArgumentException;
-import static com.aoindustries.util.StringUtility.nullIfEmpty;
+import static com.aoindustries.lang.Strings.nullIfEmpty;
 import java.util.Objects;
 
 public class Im {
