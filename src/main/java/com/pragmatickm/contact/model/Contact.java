@@ -22,10 +22,10 @@
  */
 package com.pragmatickm.contact.model;
 
+import com.aoindustries.collections.AoCollections;
 import com.aoindustries.lang.NullArgumentException;
-import com.aoindustries.net.Email;
-import com.aoindustries.util.AoCollections;
 import static com.aoindustries.lang.Strings.nullIfEmpty;
+import com.aoindustries.net.Email;
 import com.semanticcms.core.model.Element;
 import java.util.ArrayList;
 import java.util.Collections;
