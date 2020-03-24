@@ -27,7 +27,7 @@ Contacts nested within [SemanticCMS](https://github.com/aoindustries/semanticcms
 * [Project Home](https://pragmatickm.com/contact/model/)
 * [Changelog](https://pragmatickm.com/contact/model/changelog)
 * [API Docs](https://pragmatickm.com/contact/model/apidocs/)
-* [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.pragmatickm%22%20AND%20a:%22pragmatickm-contact-model%22)
+* [Maven Central Repository](https://search.maven.org/artifact/com.pragmatickm/pragmatickm-contact-model)
 * [GitHub](https://github.com/aoindustries/pragmatickm-contact-model)
 
 ## Contact Us
