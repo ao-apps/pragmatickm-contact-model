@@ -29,7 +29,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<relativePath>../../../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model-book</artifactId><version>1.5.0</version>
+	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-contact-model-book</artifactId><version>1.5.0-POST-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -51,7 +51,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<connection>scm:git:git://github.com/aoindustries/pragmatickm-contact-model.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/pragmatickm-contact-model.git</developerConnection>
 		<url>https://github.com/aoindustries/pragmatickm-contact-model</url>
-		<tag>pragmatickm-contact-model-book-1.5.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
