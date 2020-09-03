@@ -154,6 +154,7 @@ public class Contact extends Element {
 		this.jobTitle = nullIfEmpty(jobTitle);
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<Email> getEmails() {
 		synchronized(lock) {
 			if(emails == null) return Collections.emptyList();
@@ -171,6 +172,7 @@ public class Contact extends Element {
 		}
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<PhoneNumber> getPhoneNumbers() {
 		synchronized(lock) {
 			if(phoneNumbers == null) return Collections.emptyList();
@@ -187,6 +189,7 @@ public class Contact extends Element {
 		}
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<Im> getIms() {
 		synchronized(lock) {
 			if(ims == null) return Collections.emptyList();
@@ -203,6 +206,7 @@ public class Contact extends Element {
 		}
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<String> getWebPages() {
 		synchronized(lock) {
 			if(webPages == null) return Collections.emptyList();
@@ -221,6 +225,7 @@ public class Contact extends Element {
 		}
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<Address> getAddresses() {
 		synchronized(lock) {
 			if(addresses == null) return Collections.emptyList();
