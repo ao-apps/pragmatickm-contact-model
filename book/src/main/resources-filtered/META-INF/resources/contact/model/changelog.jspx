@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
-Copyright (C) 2017, 2018, 2019, 2020  AO Industries, Inc.
+Copyright (C) 2017, 2018, 2019, 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -36,8 +36,8 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		title="@{documented.name} Changelog"
 		shortTitle="Changelog"
 		tocLevels="1"
-		datePublished="2017-07-25T17:39:09-0500"
-		dateModified="2020-03-28T21:27:40-05:00"
+		datePublished="2017-07-25T17:39:09-05:00"
+		dateModified="2021-05-22T13:07:02-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -46,7 +46,11 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Updated dependencies.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release
@@ -74,7 +78,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.4.0"
-			datePublished="2019-10-12T05:37:53-0500"
+			datePublished="2019-10-12T05:37:53-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -87,7 +91,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.5"
-			datePublished="2019-06-23T21:49:55-0500"
+			datePublished="2019-06-23T21:49:55-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -106,7 +110,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.4"
-			datePublished="2017-07-26T23:48:44-0500"
+			datePublished="2017-07-26T23:48:44-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			scmUrl="@{project.scm.url}"
@@ -120,7 +124,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.3"
-			datePublished="2017-07-20T18:51:16-0500"
+			datePublished="2017-07-20T18:51:16-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -134,7 +138,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.2"
-			datePublished="2016-11-16T21:31:05-0600"
+			datePublished="2016-11-16T21:31:05-06:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -150,7 +154,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.1"
-			datePublished="2016-10-20T20:10:59-0500"
+			datePublished="2016-10-20T20:10:59-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -165,7 +169,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.3.0"
-			datePublished="2016-10-04T23:41:59-0500"
+			datePublished="2016-10-04T23:41:59-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -180,7 +184,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.2"
-			datePublished="2016-09-11T17:37:40-0500"
+			datePublished="2016-09-11T17:37:40-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -195,7 +199,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.1"
-			datePublished="2016-09-03T11:24:49-0500"
+			datePublished="2016-09-03T11:24:49-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
@@ -210,7 +214,7 @@ along with pragmatickm-contact-model.  If not, see <http://www.gnu.org/licenses 
 		<changelog:release
 			projectName="@{documented.name}"
 			version="1.0"
-			datePublished="2016-08-30T17:20:37-0500"
+			datePublished="2016-08-30T17:20:37-05:00"
 			groupId="@{project.groupId}"
 			artifactId="@{documented.artifactId}"
 			repository="https://aorepo.org/maven2/"
