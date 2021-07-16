@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/pragmatickm-contact-model/workflows/Build/badge.svg?branch=1.x)](https://github.com/aoindustries/pragmatickm-contact-model/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.pragmatickm/pragmatickm-contact-model/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.pragmatickm/pragmatickm-contact-model)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=alert_status)](https://sonarcloud.io/dashboard?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=ncloc)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=security_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.pragmatickm%3Apragmatickm-contact-model&metric=coverage)](https://sonarcloud.io/component_measures?branch=1.x&id=com.pragmatickm%3Apragmatickm-contact-model&metric=Coverage)
 
 Contacts nested within [SemanticCMS](https://github.com/aoindustries/semanticcms) pages and elements.
 
