@@ -163,7 +163,7 @@ public class Contact extends Element {
 		}
 	}
 
-	// TODO: Support unicode email addresses: https://tools.ietf.org/html/rfc6531
+	// TODO: Support unicode email addresses: https://datatracker.ietf.org/doc/html/rfc6531
 	public void addEmail(Email email) {
 		synchronized(lock) {
 			checkNotFrozen();
