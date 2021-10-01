@@ -13,7 +13,7 @@
  * (at your option) any later version.
  *
  * pragmatickm-contact-model is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
@@ -53,11 +53,11 @@ public class Contact extends Element {
 	public Contact freeze() {
 		synchronized(lock) {
 			if(!frozen) {
-				if(emails != null) emails = AoCollections.optimalUnmodifiableList(emails);
-				if(phoneNumbers != null) phoneNumbers = AoCollections.optimalUnmodifiableList(phoneNumbers);
-				if(ims != null) ims = AoCollections.optimalUnmodifiableList(ims);
-				if(webPages != null) webPages = AoCollections.optimalUnmodifiableList(webPages);
-				if(addresses != null) addresses = AoCollections.optimalUnmodifiableList(addresses);
+				emails = AoCollections.optimalUnmodifiableList(emails);
+				phoneNumbers = AoCollections.optimalUnmodifiableList(phoneNumbers);
+				ims = AoCollections.optimalUnmodifiableList(ims);
+				webPages = AoCollections.optimalUnmodifiableList(webPages);
+				addresses = AoCollections.optimalUnmodifiableList(addresses);
 				super.freeze();
 			}
 		}
