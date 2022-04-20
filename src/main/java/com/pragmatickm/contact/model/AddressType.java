@@ -24,34 +24,34 @@
 package com.pragmatickm.contact.model;
 
 public enum AddressType {
-	POBOX("POBOX",        "POBOX", "pragmatickm-contact-address-pobox"),
-	HOME ("Home Address", "Home",  "pragmatickm-contact-address-home"),
-	WORK ("Work Address", "Work",  "pragmatickm-contact-address-work");
+  POBOX("POBOX",        "POBOX", "pragmatickm-contact-address-pobox"),
+  HOME ("Home Address", "Home",  "pragmatickm-contact-address-home"),
+  WORK ("Work Address", "Work",  "pragmatickm-contact-address-work");
 
-	private final String label;
-	private final String shortLabel;
-	private final String cssClass;
+  private final String label;
+  private final String shortLabel;
+  private final String cssClass;
 
-	private AddressType(
-		String label,
-		String shortLabel,
-		String cssClass
-	) {
-		this.label = label;
-		this.shortLabel = shortLabel;
-		this.cssClass = cssClass;
-	}
+  private AddressType(
+    String label,
+    String shortLabel,
+    String cssClass
+  ) {
+    this.label = label;
+    this.shortLabel = shortLabel;
+    this.cssClass = cssClass;
+  }
 
-	public String getLabel() {
-		return label;
-	}
+  public String getLabel() {
+    return label;
+  }
 
-	public String getShortLabel() {
-		return shortLabel;
-	}
+  public String getShortLabel() {
+    return shortLabel;
+  }
 
-	// TODO: This CSS Class should go in pragmatickm-contact-servlet
-	public String getCssClass() {
-		return cssClass;
-	}
+  // TODO: This CSS Class should go in pragmatickm-contact-servlet
+  public String getCssClass() {
+    return cssClass;
+  }
 }

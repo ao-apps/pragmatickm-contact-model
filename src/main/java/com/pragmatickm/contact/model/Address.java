@@ -29,93 +29,95 @@ import java.util.Objects;
 
 public class Address {
 
-	private final AddressType type;
-	private final String address1;
-	private final String address2;
-	private final String city;
-	private final String stateProv;
-	private final String zipPostal;
-	private final String country;
-	private final String comment;
+  private final AddressType type;
+  private final String address1;
+  private final String address2;
+  private final String city;
+  private final String stateProv;
+  private final String zipPostal;
+  private final String country;
+  private final String comment;
 
-	public Address(
-		AddressType type,
-		String address1,
-		String address2,
-		String city,
-		String stateProv,
-		String zipPostal,
-		String country,
-		String comment
-	) {
-		this.type = NullArgumentException.checkNotNull(type, "type");
-		this.address1 = nullIfEmpty(address1);
-		this.address2 = nullIfEmpty(address2);
-		this.city = nullIfEmpty(city);
-		this.stateProv = nullIfEmpty(stateProv);
-		this.zipPostal = nullIfEmpty(zipPostal);
-		this.country = nullIfEmpty(country);
-		this.comment = nullIfEmpty(comment);
-	}
+  public Address(
+    AddressType type,
+    String address1,
+    String address2,
+    String city,
+    String stateProv,
+    String zipPostal,
+    String country,
+    String comment
+  ) {
+    this.type = NullArgumentException.checkNotNull(type, "type");
+    this.address1 = nullIfEmpty(address1);
+    this.address2 = nullIfEmpty(address2);
+    this.city = nullIfEmpty(city);
+    this.stateProv = nullIfEmpty(stateProv);
+    this.zipPostal = nullIfEmpty(zipPostal);
+    this.country = nullIfEmpty(country);
+    this.comment = nullIfEmpty(comment);
+  }
 
-	@Override
-	public boolean equals(Object o) {
-		if(!(o instanceof Address)) return false;
-		Address other = (Address)o;
-		return
-			type == other.type
-			&& Objects.equals(address1, other.address1)
-			&& Objects.equals(address2, other.address2)
-			&& Objects.equals(city, other.city)
-			&& Objects.equals(stateProv, other.stateProv)
-			&& Objects.equals(zipPostal, other.zipPostal)
-			&& Objects.equals(country, other.country)
-			&& Objects.equals(comment, other.comment)
-		;
-	}
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Address)) {
+      return false;
+    }
+    Address other = (Address)o;
+    return
+      type == other.type
+      && Objects.equals(address1, other.address1)
+      && Objects.equals(address2, other.address2)
+      && Objects.equals(city, other.city)
+      && Objects.equals(stateProv, other.stateProv)
+      && Objects.equals(zipPostal, other.zipPostal)
+      && Objects.equals(country, other.country)
+      && Objects.equals(comment, other.comment)
+    ;
+  }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(
-			address1,
-			address2,
-			city,
-			stateProv,
-			zipPostal,
-			country,
-			comment
-		);
-	}
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+      address1,
+      address2,
+      city,
+      stateProv,
+      zipPostal,
+      country,
+      comment
+    );
+  }
 
-	public AddressType getType() {
-		return type;
-	}
+  public AddressType getType() {
+    return type;
+  }
 
-	public String getAddress1() {
-		return address1;
-	}
+  public String getAddress1() {
+    return address1;
+  }
 
-	public String getAddress2() {
-		return address2;
-	}
+  public String getAddress2() {
+    return address2;
+  }
 
-	public String getCity() {
-		return city;
-	}
+  public String getCity() {
+    return city;
+  }
 
-	public String getStateProv() {
-		return stateProv;
-	}
+  public String getStateProv() {
+    return stateProv;
+  }
 
-	public String getZipPostal() {
-		return zipPostal;
-	}
+  public String getZipPostal() {
+    return zipPostal;
+  }
 
-	public String getCountry() {
-		return country;
-	}
+  public String getCountry() {
+    return country;
+  }
 
-	public String getComment() {
-		return comment;
-	}
+  public String getComment() {
+    return comment;
+  }
 }

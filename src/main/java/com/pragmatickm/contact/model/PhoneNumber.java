@@ -29,44 +29,46 @@ import java.util.Objects;
 
 public class PhoneNumber {
 
-	private final PhoneType type;
-	private final String number;
-	private final String comment;
+  private final PhoneType type;
+  private final String number;
+  private final String comment;
 
-	public PhoneNumber(PhoneType type, String number, String comment) {
-		this.type = NullArgumentException.checkNotNull(type, "type");
-		this.number = NullArgumentException.checkNotNull(number, "number");
-		this.comment = nullIfEmpty(comment);
-	}
+  public PhoneNumber(PhoneType type, String number, String comment) {
+    this.type = NullArgumentException.checkNotNull(type, "type");
+    this.number = NullArgumentException.checkNotNull(number, "number");
+    this.comment = nullIfEmpty(comment);
+  }
 
-	@Override
-	public boolean equals(Object o) {
-		if(!(o instanceof PhoneNumber)) return false;
-		PhoneNumber other = (PhoneNumber)o;
-		return
-			type == other.type
-			&& number.equals(other.number)
-			&& Objects.equals(comment, other.comment)
-		;
-	}
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof PhoneNumber)) {
+      return false;
+    }
+    PhoneNumber other = (PhoneNumber)o;
+    return
+      type == other.type
+      && number.equals(other.number)
+      && Objects.equals(comment, other.comment)
+    ;
+  }
 
-	@Override
-	public int hashCode() {
-		int hash = type.hashCode();
-		hash = hash * 31 + number.hashCode();
-		hash = hash * 31 + Objects.hashCode(comment);
-		return hash;
-	}
+  @Override
+  public int hashCode() {
+    int hash = type.hashCode();
+    hash = hash * 31 + number.hashCode();
+    hash = hash * 31 + Objects.hashCode(comment);
+    return hash;
+  }
 
-	public PhoneType getType() {
-		return type;
-	}
+  public PhoneType getType() {
+    return type;
+  }
 
-	public String getNumber() {
-		return number;
-	}
+  public String getNumber() {
+    return number;
+  }
 
-	public String getComment() {
-		return comment;
-	}
+  public String getComment() {
+    return comment;
+  }
 }
