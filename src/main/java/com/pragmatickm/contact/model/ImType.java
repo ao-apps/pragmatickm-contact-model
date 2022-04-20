@@ -24,25 +24,25 @@
 package com.pragmatickm.contact.model;
 
 public enum ImType {
-	AIM ("AIM",    "pragmatickm-contact-im-aim"),
-	ICQ ("ICQ",    "pragmatickm-contact-im-icq"),
-	SKYPE("Skype", "pragmatickm-contact-im-skype");
+  AIM ("AIM",    "pragmatickm-contact-im-aim"),
+  ICQ ("ICQ",    "pragmatickm-contact-im-icq"),
+  SKYPE("Skype", "pragmatickm-contact-im-skype");
 
-	private final String label;
-	private final String cssClass;
+  private final String label;
+  private final String cssClass;
 
-	private ImType(String label, String cssClass) {
-		this.label = label;
-		this.cssClass = cssClass;
-	}
+  private ImType(String label, String cssClass) {
+    this.label = label;
+    this.cssClass = cssClass;
+  }
 
-	public String getLabel() {
-		return label;
-	}
+  public String getLabel() {
+    return label;
+  }
 
-	// TODO: This CSS Class should go in pragmatickm-task-renderer-html
-	// TODO: See StatusResult.java
-	public String getCssClass() {
-		return cssClass;
-	}
+  // TODO: This CSS Class should go in pragmatickm-task-renderer-html
+  // TODO: See StatusResult.java
+  public String getCssClass() {
+    return cssClass;
+  }
 }

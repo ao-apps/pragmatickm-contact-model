@@ -24,28 +24,28 @@
 package com.pragmatickm.contact.model;
 
 public enum PhoneType {
-	WORK    ("Work",      "pragmatickm-contact-phone-work"),
-	TOLLFREE("Toll Free", "pragmatickm-contact-phone-tollfree"),
-	HOME    ("Home",      "pragmatickm-contact-phone-home"),
-	MOBILE  ("Mobile",    "pragmatickm-contact-phone-mobile"),
-	PAGER   ("Pager",     "pragmatickm-contact-phone-pager"),
-	FAX     ("Fax",       "pragmatickm-contact-phone-fax");
+  WORK    ("Work",      "pragmatickm-contact-phone-work"),
+  TOLLFREE("Toll Free", "pragmatickm-contact-phone-tollfree"),
+  HOME    ("Home",      "pragmatickm-contact-phone-home"),
+  MOBILE  ("Mobile",    "pragmatickm-contact-phone-mobile"),
+  PAGER   ("Pager",     "pragmatickm-contact-phone-pager"),
+  FAX     ("Fax",       "pragmatickm-contact-phone-fax");
 
-	private final String label;
-	private final String cssClass;
+  private final String label;
+  private final String cssClass;
 
-	private PhoneType(String label, String cssClass) {
-		this.label = label;
-		this.cssClass = cssClass;
-	}
+  private PhoneType(String label, String cssClass) {
+    this.label = label;
+    this.cssClass = cssClass;
+  }
 
-	public String getLabel() {
-		return label;
-	}
+  public String getLabel() {
+    return label;
+  }
 
-	// TODO: This CSS Class should go in pragmatickm-task-renderer-html
-	// TODO: See StatusResult.java
-	public String getCssClass() {
-		return cssClass;
-	}
+  // TODO: This CSS Class should go in pragmatickm-task-renderer-html
+  // TODO: See StatusResult.java
+  public String getCssClass() {
+    return cssClass;
+  }
 }

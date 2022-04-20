@@ -29,44 +29,46 @@ import java.util.Objects;
 
 public class Im {
 
-	private final ImType type;
-	private final String handle;
-	private final String comment;
+  private final ImType type;
+  private final String handle;
+  private final String comment;
 
-	public Im(ImType type, String handle, String comment) {
-		this.type = NullArgumentException.checkNotNull(type, "type");
-		this.handle = NullArgumentException.checkNotNull(handle, "handle");
-		this.comment = nullIfEmpty(comment);
-	}
+  public Im(ImType type, String handle, String comment) {
+    this.type = NullArgumentException.checkNotNull(type, "type");
+    this.handle = NullArgumentException.checkNotNull(handle, "handle");
+    this.comment = nullIfEmpty(comment);
+  }
 
-	@Override
-	public boolean equals(Object o) {
-		if(!(o instanceof Im)) return false;
-		Im other = (Im)o;
-		return
-			type == other.type
-			&& handle.equals(other.handle)
-			&& Objects.equals(comment, other.comment)
-		;
-	}
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Im)) {
+      return false;
+    }
+    Im other = (Im)o;
+    return
+      type == other.type
+      && handle.equals(other.handle)
+      && Objects.equals(comment, other.comment)
+    ;
+  }
 
-	@Override
-	public int hashCode() {
-		int hash = type.hashCode();
-		hash = hash * 31 + handle.hashCode();
-		hash = hash * 31 + Objects.hashCode(comment);
-		return hash;
-	}
+  @Override
+  public int hashCode() {
+    int hash = type.hashCode();
+    hash = hash * 31 + handle.hashCode();
+    hash = hash * 31 + Objects.hashCode(comment);
+    return hash;
+  }
 
-	public ImType getType() {
-		return type;
-	}
+  public ImType getType() {
+    return type;
+  }
 
-	public String getHandle() {
-		return handle;
-	}
+  public String getHandle() {
+    return handle;
+  }
 
-	public String getComment() {
-		return comment;
-	}
+  public String getComment() {
+    return comment;
+  }
 }
