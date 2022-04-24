@@ -39,14 +39,14 @@ public class Address {
   private final String comment;
 
   public Address(
-    AddressType type,
-    String address1,
-    String address2,
-    String city,
-    String stateProv,
-    String zipPostal,
-    String country,
-    String comment
+      AddressType type,
+      String address1,
+      String address2,
+      String city,
+      String stateProv,
+      String zipPostal,
+      String country,
+      String comment
   ) {
     this.type = NullArgumentException.checkNotNull(type, "type");
     this.address1 = nullIfEmpty(address1);
@@ -63,29 +63,29 @@ public class Address {
     if (!(o instanceof Address)) {
       return false;
     }
-    Address other = (Address)o;
+    Address other = (Address) o;
     return
-      type == other.type
-      && Objects.equals(address1, other.address1)
-      && Objects.equals(address2, other.address2)
-      && Objects.equals(city, other.city)
-      && Objects.equals(stateProv, other.stateProv)
-      && Objects.equals(zipPostal, other.zipPostal)
-      && Objects.equals(country, other.country)
-      && Objects.equals(comment, other.comment)
+        type == other.type
+            && Objects.equals(address1, other.address1)
+            && Objects.equals(address2, other.address2)
+            && Objects.equals(city, other.city)
+            && Objects.equals(stateProv, other.stateProv)
+            && Objects.equals(zipPostal, other.zipPostal)
+            && Objects.equals(country, other.country)
+            && Objects.equals(comment, other.comment)
     ;
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-      address1,
-      address2,
-      city,
-      stateProv,
-      zipPostal,
-      country,
-      comment
+        address1,
+        address2,
+        city,
+        stateProv,
+        zipPostal,
+        country,
+        comment
     );
   }
 
