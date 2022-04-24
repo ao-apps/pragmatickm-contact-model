@@ -44,11 +44,11 @@ public class PhoneNumber {
     if (!(o instanceof PhoneNumber)) {
       return false;
     }
-    PhoneNumber other = (PhoneNumber)o;
+    PhoneNumber other = (PhoneNumber) o;
     return
-      type == other.type
-      && number.equals(other.number)
-      && Objects.equals(comment, other.comment)
+        type == other.type
+            && number.equals(other.number)
+            && Objects.equals(comment, other.comment)
     ;
   }
 

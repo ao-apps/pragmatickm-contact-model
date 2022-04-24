@@ -44,11 +44,11 @@ public class Im {
     if (!(o instanceof Im)) {
       return false;
     }
-    Im other = (Im)o;
+    Im other = (Im) o;
     return
-      type == other.type
-      && handle.equals(other.handle)
-      && Objects.equals(comment, other.comment)
+        type == other.type
+            && handle.equals(other.handle)
+            && Objects.equals(comment, other.comment)
     ;
   }
 

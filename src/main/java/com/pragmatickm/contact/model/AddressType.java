@@ -33,9 +33,9 @@ public enum AddressType {
   private final String cssClass;
 
   private AddressType(
-    String label,
-    String shortLabel,
-    String cssClass
+      String label,
+      String shortLabel,
+      String cssClass
   ) {
     this.label = label;
     this.shortLabel = shortLabel;
