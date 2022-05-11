@@ -23,9 +23,10 @@
 
 package com.pragmatickm.contact.model;
 
+import static com.aoapps.lang.Strings.nullIfEmpty;
+
 import com.aoapps.collections.AoCollections;
 import com.aoapps.lang.NullArgumentException;
-import static com.aoapps.lang.Strings.nullIfEmpty;
 import com.aoapps.net.Email;
 import com.semanticcms.core.model.Element;
 import java.util.ArrayList;
@@ -280,58 +281,58 @@ public class Contact extends Element {
     String value = null;
     StringBuilder sb = new StringBuilder();
     // Get copies because writes to out can block, don't hold lock while blocking on I/O
-    String _title = this.title;
-    if (_title != null) {
+    String myTitle = this.title;
+    if (myTitle != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
-      sb.append(value = _title);
+      sb.append(value = myTitle);
     }
-    String _first = this.first;
-    if (_first != null) {
+    String myFirst = this.first;
+    if (myFirst != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
-      sb.append(value = _first);
+      sb.append(value = myFirst);
     }
-    String _middle = this.middle;
-    if (_middle != null) {
+    String myMiddle = this.middle;
+    if (myMiddle != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
-      sb.append(value = _middle);
+      sb.append(value = myMiddle);
     }
-    String _nick = this.nick;
-    if (_nick != null) {
+    String myNick = this.nick;
+    if (myNick != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
       sb.append('“');
-      sb.append(value = _nick);
+      sb.append(value = myNick);
       sb.append('”');
     }
-    String _last = this.last;
-    if (_last != null) {
+    String myLast = this.last;
+    if (myLast != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
-      sb.append(value = _last);
+      sb.append(value = myLast);
     }
-    String _maiden = this.maiden;
-    if (_maiden != null) {
+    String myMaiden = this.maiden;
+    if (myMaiden != null) {
       if (sb.length() > 0) {
         sb.append(' ');
       }
       sb.append('(');
-      sb.append(value = _maiden);
+      sb.append(value = myMaiden);
       sb.append(')');
     }
-    String _suffix = this.suffix;
-    if (_suffix != null) {
+    String mySuffix = this.suffix;
+    if (mySuffix != null) {
       if (sb.length() > 0) {
         sb.append(", ");
       }
-      sb.append(value = _suffix);
+      sb.append(value = mySuffix);
     }
     if (sb.length() > 0) {
       assert value != null;
@@ -342,17 +343,17 @@ public class Contact extends Element {
       assert sb.length() > value.length();
       return sb.toString();
     }
-    String _jobTitle = this.jobTitle;
-    if (_jobTitle != null) {
-      return _jobTitle;
+    String myJobTitle = this.jobTitle;
+    if (myJobTitle != null) {
+      return myJobTitle;
     }
-    String _company = this.company;
-    if (_company != null) {
-      return _company;
+    String myCompany = this.company;
+    if (myCompany != null) {
+      return myCompany;
     }
-    String _department = this.department;
-    if (_department != null) {
-      return _department;
+    String myDepartment = this.department;
+    if (myDepartment != null) {
+      return myDepartment;
     }
     return "Contact";
   }

@@ -23,8 +23,9 @@
 
 package com.pragmatickm.contact.model;
 
-import com.aoapps.lang.NullArgumentException;
 import static com.aoapps.lang.Strings.nullIfEmpty;
+
+import com.aoapps.lang.NullArgumentException;
 import java.util.Objects;
 
 public class Address {
@@ -72,8 +73,7 @@ public class Address {
             && Objects.equals(stateProv, other.stateProv)
             && Objects.equals(zipPostal, other.zipPostal)
             && Objects.equals(country, other.country)
-            && Objects.equals(comment, other.comment)
-    ;
+            && Objects.equals(comment, other.comment);
   }
 
   @Override

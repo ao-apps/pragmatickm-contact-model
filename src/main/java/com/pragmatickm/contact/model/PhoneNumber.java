@@ -23,8 +23,9 @@
 
 package com.pragmatickm.contact.model;
 
-import com.aoapps.lang.NullArgumentException;
 import static com.aoapps.lang.Strings.nullIfEmpty;
+
+import com.aoapps.lang.NullArgumentException;
 import java.util.Objects;
 
 public class PhoneNumber {
@@ -48,8 +49,7 @@ public class PhoneNumber {
     return
         type == other.type
             && number.equals(other.number)
-            && Objects.equals(comment, other.comment)
-    ;
+            && Objects.equals(comment, other.comment);
   }
 
   @Override

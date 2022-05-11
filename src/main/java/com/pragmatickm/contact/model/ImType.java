@@ -24,9 +24,17 @@
 package com.pragmatickm.contact.model;
 
 public enum ImType {
-  AIM  ("AIM",   "pragmatickm-contact-im-aim"),
-  ICQ  ("ICQ",   "pragmatickm-contact-im-icq"),
-  SKYPE("Skype", "pragmatickm-contact-im-skype");
+  AIM(
+      "AIM",
+      "pragmatickm-contact-im-aim"
+  ),
+  ICQ(
+      "ICQ",
+      "pragmatickm-contact-im-icq"
+  ),
+  SKYPE(
+      "Skype",
+      "pragmatickm-contact-im-skype");
 
   private final String label;
   private final String cssClass;
