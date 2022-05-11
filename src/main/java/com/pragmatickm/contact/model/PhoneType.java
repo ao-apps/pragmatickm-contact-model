@@ -24,12 +24,30 @@
 package com.pragmatickm.contact.model;
 
 public enum PhoneType {
-  WORK    ("Work",      "pragmatickm-contact-phone-work"),
-  TOLLFREE("Toll Free", "pragmatickm-contact-phone-tollfree"),
-  HOME    ("Home",      "pragmatickm-contact-phone-home"),
-  MOBILE  ("Mobile",    "pragmatickm-contact-phone-mobile"),
-  PAGER   ("Pager",     "pragmatickm-contact-phone-pager"),
-  FAX     ("Fax",       "pragmatickm-contact-phone-fax");
+  WORK(
+      "Work",
+      "pragmatickm-contact-phone-work"
+  ),
+  TOLLFREE(
+      "Toll Free",
+      "pragmatickm-contact-phone-tollfree"
+  ),
+  HOME(
+      "Home",
+      "pragmatickm-contact-phone-home"
+  ),
+  MOBILE(
+      "Mobile",
+      "pragmatickm-contact-phone-mobile"
+  ),
+  PAGER(
+      "Pager",
+      "pragmatickm-contact-phone-pager"
+  ),
+  FAX(
+      "Fax",
+      "pragmatickm-contact-phone-fax"
+  );
 
   private final String label;
   private final String cssClass;

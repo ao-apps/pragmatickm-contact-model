@@ -24,9 +24,21 @@
 package com.pragmatickm.contact.model;
 
 public enum AddressType {
-  POBOX("POBOX",        "POBOX", "pragmatickm-contact-address-pobox"),
-  HOME ("Home Address", "Home",  "pragmatickm-contact-address-home"),
-  WORK ("Work Address", "Work",  "pragmatickm-contact-address-work");
+  POBOX(
+      "POBOX",
+      "POBOX",
+      "pragmatickm-contact-address-pobox"
+  ),
+  HOME(
+      "Home Address",
+      "Home",
+      "pragmatickm-contact-address-home"
+  ),
+  WORK(
+      "Work Address",
+      "Work",
+      "pragmatickm-contact-address-work"
+  );
 
   private final String label;
   private final String shortLabel;
