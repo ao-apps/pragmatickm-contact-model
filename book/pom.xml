@@ -41,6 +41,9 @@ along with pragmatickm-contact-model.  If not, see <https://www.gnu.org/licenses
     <documented.artifactId>pragmatickm-contact-model</documented.artifactId>
     <documented.name>PragmaticKM Contact Model</documented.name>
     <documented.description>Contacts nested within SemanticCMS pages and elements.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/contact/">Contact</a>
+/ <a target="${javadoc.target}" href="${project.url}">Model</a>]]></javadoc.breadcrumbs>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
