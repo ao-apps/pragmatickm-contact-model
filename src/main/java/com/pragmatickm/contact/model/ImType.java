@@ -1,6 +1,6 @@
 /*
  * pragmatickm-contact-model - Contacts nested within SemanticCMS pages and elements.
- * Copyright (C) 2015, 2016, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2015, 2016, 2020, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,7 +34,20 @@ public enum ImType {
   ),
   SKYPE(
       "Skype",
-      "pragmatickm-contact-im-skype");
+      "pragmatickm-contact-im-skype"
+  ),
+  TEAMS(
+      "Teams",
+      "pragmatickm-contact-im-teams"
+  ),
+  TELEGRAM(
+      "Telegram",
+      "pragmatickm-contact-im-telegram"
+  ),
+  ZOOM(
+      "Zoom",
+      "pragmatickm-contact-im-zoom"
+  );
 
   private final String label;
   private final String cssClass;
