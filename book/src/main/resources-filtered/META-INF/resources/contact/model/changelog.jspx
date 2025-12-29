@@ -37,7 +37,7 @@ along with pragmatickm-contact-model.  If not, see <https://www.gnu.org/licenses
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2017-07-25T17:39:09-05:00"
-    dateModified="2025-07-06T21:57:00Z"
+    dateModified="2025-12-26T03:55:26Z"
   >
     <c:set var="latestRelease" value="1.6.1" />
     <c:if test="${
@@ -53,6 +53,7 @@ along with pragmatickm-contact-model.  If not, see <https://www.gnu.org/licenses
         scmUrl="@{project.scm.url}"
       >
         <ul>
+          <li>Minimum Java version changed from 11 to 17.</li>
           <li>Skype has been discontinued: added support for contact im types <code>teams</code>, <code>telegram</code>, and <code>zoom</code>.</li>
         </ul>
       </changelog:release>
